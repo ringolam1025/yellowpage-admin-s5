@@ -10,5 +10,13 @@ module.exports = ({ env }) => ({
       upload: {},
       delete: {},      
     },
+    i18n: {
+    enabled: true,
+    config: {
+      defaultLocale: 'en',
+      // 你要支援嘅語言列表
+      locales: ['en', 'zh-Hant', 'fr'],
+    },
+  },
   },
 });

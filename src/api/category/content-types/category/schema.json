@@ -41,6 +41,17 @@
       "relation": "oneToMany",
       "target": "api::directory.directory",
       "mappedBy": "category"
+    },
+    "display": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "default": 10,
+      "unique": true
     }
   }
 }

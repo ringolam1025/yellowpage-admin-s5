@@ -9,7 +9,7 @@
     "deploy": "strapi deploy",
     "start": "start",
     "export": "strapi export",
-    "transfer": "npx strapi transfer --to https://clever-cabbage-6e67c1e7f8.strapiapp.com/admin b4821ddb44746808689009aa890939177b52ce4552b9285f9e7ce0044ce21fbdc8bfe1ee6d65b7afb40f81265ac32e12134379194ca3fb8c5e3d5cdf5caed24c6c0b5d8fe0cc6ee674d599735561c1e14c344478235e9c2b2ab8d89cb70a15454b7a1bdb4a4d1765a83f054ff5e038694f61814f2a078bb2431a291e843d5e24"
+    "transfer": "npx strapi transfer"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.24.2",
