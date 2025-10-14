@@ -17,6 +17,8 @@
     "@strapi/provider-upload-cloudinary": "^5.24.2",
     "@strapi/strapi": "5.24.2",
     "better-sqlite3": "11.3.0",
+    "json2csv": "^6.0.0-alpha.2",
+    "node-fetch": "^2.7.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
@@ -29,5 +31,8 @@
   "strapi": {
     "uuid": "b7dc794c-9c43-44dd-9302-a64f4fc2f672",
     "installId": "721022555c95de358aacfa94a59964b97cd30d945c260be03dbf42690e9ee589"
+  },
+  "devDependencies": {
+    "strapi": "^3.6.11"
   }
 }
