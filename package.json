@@ -9,7 +9,7 @@
     "deploy": "strapi deploy",
     "start": "start",
     "export": "strapi export",
-    "transfer": "npx strapi transfer"
+    "transfer": "npx strapi transfer --exclude files"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.24.2",
