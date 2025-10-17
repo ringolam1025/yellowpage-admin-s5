@@ -2,7 +2,7 @@
   "name": "yellowpage-admin-s-5",
   "version": "0.1.0",
   "private": true,
-  "description": "A Strapi application",
+  "description": "CMS for ABRightHere",
   "scripts": {
     "dev": "strapi develop",
     "build": "strapi build",
@@ -31,8 +31,5 @@
   "strapi": {
     "uuid": "b7dc794c-9c43-44dd-9302-a64f4fc2f672",
     "installId": "721022555c95de358aacfa94a59964b97cd30d945c260be03dbf42690e9ee589"
-  },
-  "devDependencies": {
-    "strapi": "^3.6.11"
   }
 }
