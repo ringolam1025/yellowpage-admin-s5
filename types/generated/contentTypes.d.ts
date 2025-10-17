@@ -796,57 +796,45 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    display: Schema.Attribute.Boolean &
+    content: Schema.Attribute.RichText &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
-      }> &
-      Schema.Attribute.DefaultTo<true>;
-    file: Schema.Attribute.Media<'images' | 'videos' | 'audios'> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
       }>;
-    icon: Schema.Attribute.Media<'images' | 'videos' | 'audios'> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    last_update: Schema.Attribute.Date &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::newspaper.newspaper'
     >;
-    name: Schema.Attribute.String &
-      Schema.Attribute.Required &
+    photo: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    sequence: Schema.Attribute.Integer &
+    publisher_name: Schema.Attribute.Enumeration<
+      [
+        'Canada 88 \u52A0\u62FF\u592788\u5831',
+        'Canadian Chinese Times \u52A0\u83EF\u5831',
+        'Eastern Trends Newspaper \u6771\u65B9\u5831',
+        'Edmonton Chinese News \u611B\u83EF\u5831',
+        'Kanzhongguo \u770B\u4E2D\u570B',
+        'The Epoch Times \u5927\u7D00\u5143',
+        'Trend Weekly \u9592\u60C5',
+      ]
+    > &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
-      }> &
-      Schema.Attribute.DefaultTo<10>;
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
