@@ -15,6 +15,15 @@
     }
   },
   "attributes": {
+    "header": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
     "publisher_name": {
       "type": "enumeration",
       "pluginOptions": {
@@ -30,7 +39,8 @@
         "Edmonton Chinese News 愛華報",
         "Kanzhongguo 看中國",
         "The Epoch Times 大紀元",
-        "Trend Weekly 閒情"
+        "Trend Weekly 閒情",
+        "Mingpao Canada 明報加國版"
       ]
     },
     "content": {

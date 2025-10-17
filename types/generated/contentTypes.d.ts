@@ -806,6 +806,13 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    header: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -827,6 +834,7 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
         'Kanzhongguo \u770B\u4E2D\u570B',
         'The Epoch Times \u5927\u7D00\u5143',
         'Trend Weekly \u9592\u60C5',
+        'Mingpao Canada \u660E\u5831\u52A0\u570B\u7248',
       ]
     > &
       Schema.Attribute.Required &
