@@ -24,24 +24,11 @@
       },
       "required": true
     },
-    "publisher_name": {
-      "type": "enumeration",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true,
-      "enum": [
-        "Canada 88 加拿大88報",
-        "Canadian Chinese Times 加華報",
-        "Eastern Trends Newspaper 東方報",
-        "Edmonton Chinese News 愛華報",
-        "Kanzhongguo 看中國",
-        "The Epoch Times 大紀元",
-        "Trend Weekly 閒情",
-        "Mingpao Canada 明報加國版"
-      ]
+    "publisher": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::publisher.publisher",
+      "inversedBy": "newspaper"
     },
     "content": {
       "type": "richtext",
