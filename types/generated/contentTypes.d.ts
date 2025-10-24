@@ -524,6 +524,39 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCustomerCustomer extends Struct.CollectionTypeSchema {
+  collectionName: 'customers';
+  info: {
+    displayName: 'Customer';
+    pluralName: 'customers';
+    singularName: 'customer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dob: Schema.Attribute.Date;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    firstname: Schema.Attribute.String & Schema.Attribute.Required;
+    lastname: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::customer.customer'
+    > &
+      Schema.Attribute.Private;
+    phone: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    stamperoo_id: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
   collectionName: 'directories';
   info: {
@@ -826,7 +859,7 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
       }>;
     publishedAt: Schema.Attribute.DateTime;
     publisher: Schema.Attribute.Relation<
-      'oneToOne',
+      'manyToOne',
       'api::publisher.publisher'
     >;
     updatedAt: Schema.Attribute.DateTime;
@@ -881,8 +914,8 @@ export interface ApiPublisherPublisher extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    newspaper: Schema.Attribute.Relation<
-      'oneToOne',
+    newspapers: Schema.Attribute.Relation<
+      'oneToMany',
       'api::newspaper.newspaper'
     >;
     publishedAt: Schema.Attribute.DateTime;
@@ -1455,6 +1488,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::category.category': ApiCategoryCategory;
+      'api::customer.customer': ApiCustomerCustomer;
       'api::directory.directory': ApiDirectoryDirectory;
       'api::event.event': ApiEventEvent;
       'api::newspaper.newspaper': ApiNewspaperNewspaper;

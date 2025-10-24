@@ -45,9 +45,9 @@
       "default": 10,
       "unique": true
     },
-    "newspaper": {
+    "newspapers": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::newspaper.newspaper",
       "mappedBy": "publisher"
     }

@@ -26,9 +26,9 @@
     },
     "publisher": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::publisher.publisher",
-      "inversedBy": "newspaper"
+      "inversedBy": "newspapers"
     },
     "content": {
       "type": "richtext",

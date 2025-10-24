@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customers",
+  "info": {
+    "singularName": "customer",
+    "pluralName": "customers",
+    "displayName": "Customer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "firstname": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "dob": {
+      "type": "date"
+    },
+    "stamperoo_id": {
+      "type": "string"
+    }
+  }
+}
