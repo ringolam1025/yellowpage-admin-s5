@@ -39,6 +39,14 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "Stamperoo_template_id": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

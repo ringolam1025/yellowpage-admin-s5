@@ -970,6 +970,12 @@ export interface ApiSettingSetting extends Struct.SingleTypeSchema {
       'api::setting.setting'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    Stamperoo_template_id: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
