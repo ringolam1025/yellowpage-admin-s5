@@ -829,6 +829,12 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    Area: Schema.Attribute.Enumeration<['Hong Kong', 'Canada']> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     content: Schema.Attribute.RichText &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
