@@ -60,6 +60,18 @@
         }
       },
       "required": false
+    },
+    "Area": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "enum": [
+        "Hong Kong",
+        "Canada"
+      ]
     }
   }
 }
