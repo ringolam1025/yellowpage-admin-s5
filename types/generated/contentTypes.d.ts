@@ -886,7 +886,7 @@ export interface ApiInfluencerInfluencer extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    profile_images: Schema.Attribute.Media<'images', true> &
+    profile_images: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
