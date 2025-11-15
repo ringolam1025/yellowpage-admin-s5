@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shop_tiers",
+  "info": {
+    "singularName": "shop-tier",
+    "pluralName": "shop-tiers",
+    "displayName": "ShopTier"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "tier": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "price": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": false
+    }
+  }
+}

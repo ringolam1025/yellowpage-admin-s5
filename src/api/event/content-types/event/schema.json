@@ -134,6 +134,14 @@
         }
       },
       "required": true
+    },
+    "organizer": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

@@ -573,6 +573,12 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    about: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     address: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -590,10 +596,22 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    facebook: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     images: Schema.Attribute.Media<'images' | 'videos', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
+        };
+      }>;
+    instagram: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
         };
       }>;
     latitude: Schema.Attribute.Float &
@@ -675,8 +693,18 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    shop_tier: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::shop-tier.shop-tier'
+    >;
     start_date: Schema.Attribute.DateTime &
       Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    threads: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -689,6 +717,12 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
+        };
+      }>;
+    whatsapp: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
         };
       }>;
   };
@@ -777,6 +811,12 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       }>;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    organizer: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1081,6 +1121,50 @@ export interface ApiSettingSetting extends Struct.SingleTypeSchema {
     >;
     publishedAt: Schema.Attribute.DateTime;
     Stamperoo_template_id: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiShopTierShopTier extends Struct.CollectionTypeSchema {
+  collectionName: 'shop_tiers';
+  info: {
+    displayName: 'ShopTier';
+    pluralName: 'shop-tiers';
+    singularName: 'shop-tier';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::shop-tier.shop-tier'
+    >;
+    price: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    tier: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1611,6 +1695,7 @@ declare module '@strapi/strapi' {
       'api::newspaper.newspaper': ApiNewspaperNewspaper;
       'api::publisher.publisher': ApiPublisherPublisher;
       'api::setting.setting': ApiSettingSetting;
+      'api::shop-tier.shop-tier': ApiShopTierShopTier;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

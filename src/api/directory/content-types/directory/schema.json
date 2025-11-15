@@ -91,6 +91,15 @@
         "videos"
       ]
     },
+    "opening_hour": {
+      "type": "json",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": false
+    },
     "phone": {
       "type": "string",
       "pluginOptions": {
@@ -108,36 +117,11 @@
         }
       }
     },
-    "opening_hour": {
-      "type": "json",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": false
-    },
     "services": {
       "type": "json",
       "pluginOptions": {
         "i18n": {
           "localized": true
-        }
-      }
-    },
-    "payment": {
-      "type": "json",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "review": {
-      "type": "json",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
         }
       }
     },
@@ -159,6 +143,68 @@
         }
       },
       "required": false
+    },
+    "about": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": false
+    },
+    "shop_tier": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::shop-tier.shop-tier"
+    },
+    "payment": {
+      "type": "json",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "review": {
+      "type": "json",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "facebook": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "instagram": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "threads": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "whatsapp": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
