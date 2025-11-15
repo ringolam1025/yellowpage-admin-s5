@@ -626,6 +626,12 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::directory.directory'
     >;
+    logo: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     longitude: Schema.Attribute.Float &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
