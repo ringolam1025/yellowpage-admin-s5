@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_event_categories",
+  "info": {
+    "displayName": "Category"
+  },
+  "options": {},
+  "attributes": {
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Community",
+        "Local Fun",
+        "Arts & Shows",
+        "Food & Markets",
+        "Health & Wellness,",
+        "Business & Education,",
+        "Sports & Outdoors,",
+        "Music & Nightlife,",
+        "Family & Kids"
+      ]
+    }
+  },
+  "config": {}
+}

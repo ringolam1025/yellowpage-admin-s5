@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shop_opening_hours",
+  "info": {
+    "displayName": "opening_hours",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "day": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    "open": {
+      "type": "time",
+      "required": true
+    },
+    "close": {
+      "type": "time",
+      "required": true
+    },
+    "isClosed": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

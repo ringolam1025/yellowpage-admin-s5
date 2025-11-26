@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shop_services",
+  "info": {
+    "displayName": "Services"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "duration": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}
