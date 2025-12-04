@@ -865,19 +865,19 @@ export interface ApiInfluencerInfluencer extends Struct.CollectionTypeSchema {
     email: Schema.Attribute.Email &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     end_date: Schema.Attribute.DateTime &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     facebook: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     image: Schema.Attribute.Media<'images' | 'videos', true> &
@@ -889,7 +889,7 @@ export interface ApiInfluencerInfluencer extends Struct.CollectionTypeSchema {
     instagram: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     locale: Schema.Attribute.String;
@@ -907,12 +907,6 @@ export interface ApiInfluencerInfluencer extends Struct.CollectionTypeSchema {
     phone: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
-        };
-      }>;
-    profile_images: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
           localized: false;
         };
       }>;
@@ -920,7 +914,13 @@ export interface ApiInfluencerInfluencer extends Struct.CollectionTypeSchema {
     start_date: Schema.Attribute.DateTime &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
+        };
+      }>;
+    thumbnail: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
         };
       }>;
     updatedAt: Schema.Attribute.DateTime;
@@ -929,13 +929,13 @@ export interface ApiInfluencerInfluencer extends Struct.CollectionTypeSchema {
     x: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     youtube: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
   };
