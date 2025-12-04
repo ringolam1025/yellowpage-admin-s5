@@ -28,7 +28,7 @@
       "type": "component",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "component": "event.category",
@@ -143,6 +143,14 @@
       },
       "required": true,
       "default": "2025-09-30T06:00:01.832Z"
+    },
+    "website": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "desc": {
       "type": "richtext",
