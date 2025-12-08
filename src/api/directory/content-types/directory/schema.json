@@ -112,13 +112,14 @@
     },
     "rating": {
       "type": "integer",
+      "private": true,
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "required": true,
-      "default": 0,
+      "required": false,
+      "default": 5,
       "min": 0,
       "max": 5
     },
@@ -126,7 +127,7 @@
       "type": "media",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "multiple": true,
@@ -164,6 +165,7 @@
     },
     "review": {
       "type": "json",
+      "private": true,
       "pluginOptions": {
         "i18n": {
           "localized": false

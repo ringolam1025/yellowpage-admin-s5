@@ -593,7 +593,7 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
     images: Schema.Attribute.Media<'images' | 'videos', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     latitude: Schema.Attribute.Float &
@@ -668,7 +668,7 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
       Schema.Attribute.DefaultTo<'free'>;
     publishedAt: Schema.Attribute.DateTime;
     rating: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
+      Schema.Attribute.Private &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -681,8 +681,9 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
         },
         number
       > &
-      Schema.Attribute.DefaultTo<0>;
+      Schema.Attribute.DefaultTo<5>;
     review: Schema.Attribute.JSON &
+      Schema.Attribute.Private &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -1055,6 +1056,68 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPromotionPromotion extends Struct.CollectionTypeSchema {
+  collectionName: 'promotions';
+  info: {
+    displayName: 'Promotion';
+    pluralName: 'promotions';
+    singularName: 'promotion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    desc: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    from: Schema.Attribute.Date &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    image: Schema.Attribute.Media<'images', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotion.promotion'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    to: Schema.Attribute.Date &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPublisherPublisher extends Struct.CollectionTypeSchema {
   collectionName: 'publishers';
   info: {
@@ -1133,13 +1196,13 @@ export interface ApiSettingSetting extends Struct.SingleTypeSchema {
     applogo: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     banner: Schema.Attribute.Media<'images' | 'videos', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     createdAt: Schema.Attribute.DateTime;
@@ -1154,7 +1217,7 @@ export interface ApiSettingSetting extends Struct.SingleTypeSchema {
     Stamperoo_template_id: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     updatedAt: Schema.Attribute.DateTime;
@@ -1753,6 +1816,7 @@ declare module '@strapi/strapi' {
       'api::influencer.influencer': ApiInfluencerInfluencer;
       'api::location.location': ApiLocationLocation;
       'api::newspaper.newspaper': ApiNewspaperNewspaper;
+      'api::promotion.promotion': ApiPromotionPromotion;
       'api::publisher.publisher': ApiPublisherPublisher;
       'api::setting.setting': ApiSettingSetting;
       'api::shop-tier.shop-tier': ApiShopTierShopTier;
