@@ -202,7 +202,17 @@
           "localized": false
         }
       },
-      "component": "shop.social-media",
+      "component": "common.social-media",
+      "repeatable": true
+    },
+    "rewards": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "shop.rewards",
       "repeatable": true
     }
   }

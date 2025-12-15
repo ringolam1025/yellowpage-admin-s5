@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shop_rewards",
+  "info": {
+    "displayName": "Rewards"
+  },
+  "options": {},
+  "attributes": {
+    "reward": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    }
+  },
+  "config": {}
+}

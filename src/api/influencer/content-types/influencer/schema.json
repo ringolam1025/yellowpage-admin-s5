@@ -122,6 +122,16 @@
           "localized": false
         }
       }
+    },
+    "social_media": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "common.social-media",
+      "repeatable": true
     }
   }
 }

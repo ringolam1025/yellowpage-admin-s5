@@ -1,5 +1,35 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface CommonSocialMedia extends Struct.ComponentSchema {
+  collectionName: 'components_common_social_medias';
+  info: {
+    displayName: 'Social Media';
+  };
+  attributes: {
+    name: Schema.Attribute.Enumeration<
+      [
+        'Facebook',
+        'Instagram',
+        'Threads',
+        'Website',
+        'Whatsapp',
+        'Youtube',
+        'LinkedIn',
+        'Telegram',
+        'Snapchat',
+        'Reddit',
+        'X',
+        'Discord',
+        'Line',
+        'Signal',
+        'GitHub',
+        'Truth Social',
+      ]
+    >;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface EventCategory extends Struct.ComponentSchema {
   collectionName: 'components_event_categories';
   info: {
@@ -29,7 +59,7 @@ export interface ShopOpeningHours extends Struct.ComponentSchema {
     icon: 'clock';
   };
   attributes: {
-    close: Schema.Attribute.Time & Schema.Attribute.Required;
+    close: Schema.Attribute.Time;
     day: Schema.Attribute.Enumeration<
       [
         'Monday',
@@ -40,10 +70,22 @@ export interface ShopOpeningHours extends Struct.ComponentSchema {
         'Saturday',
         'Sunday',
       ]
-    > &
-      Schema.Attribute.Required;
+    >;
     isClosed: Schema.Attribute.Boolean;
-    open: Schema.Attribute.Time & Schema.Attribute.Required;
+    open: Schema.Attribute.Time;
+  };
+}
+
+export interface ShopRewards extends Struct.ComponentSchema {
+  collectionName: 'components_shop_rewards';
+  info: {
+    displayName: 'Rewards';
+  };
+  attributes: {
+    desc: Schema.Attribute.String;
+    end_date: Schema.Attribute.Date;
+    reward: Schema.Attribute.String;
+    start_date: Schema.Attribute.Date;
   };
 }
 
@@ -60,27 +102,14 @@ export interface ShopServices extends Struct.ComponentSchema {
   };
 }
 
-export interface ShopSocialMedia extends Struct.ComponentSchema {
-  collectionName: 'components_shop_social_medias';
-  info: {
-    displayName: 'Social Media';
-    icon: 'discuss';
-  };
-  attributes: {
-    name: Schema.Attribute.Enumeration<
-      ['Facebook', 'Instagram', 'Threads', 'Website', 'Whatsapp']
-    >;
-    url: Schema.Attribute.String;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'common.social-media': CommonSocialMedia;
       'event.category': EventCategory;
       'shop.opening-hours': ShopOpeningHours;
+      'shop.rewards': ShopRewards;
       'shop.services': ShopServices;
-      'shop.social-media': ShopSocialMedia;
     }
   }
 }

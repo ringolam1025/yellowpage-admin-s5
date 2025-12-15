@@ -689,7 +689,13 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    social_media: Schema.Attribute.Component<'shop.social-media', true> &
+    rewards: Schema.Attribute.Component<'shop.rewards', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    social_media: Schema.Attribute.Component<'common.social-media', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -912,6 +918,12 @@ export interface ApiInfluencerInfluencer extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    social_media: Schema.Attribute.Component<'common.social-media', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     start_date: Schema.Attribute.DateTime &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

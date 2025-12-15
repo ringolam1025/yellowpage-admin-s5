@@ -8,7 +8,7 @@
   "attributes": {
     "day": {
       "type": "enumeration",
-      "required": true,
+      "required": false,
       "enum": [
         "Monday",
         "Tuesday",
@@ -21,11 +21,11 @@
     },
     "open": {
       "type": "time",
-      "required": true
+      "required": false
     },
     "close": {
       "type": "time",
-      "required": true
+      "required": false
     },
     "isClosed": {
       "type": "boolean"

@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_common_social_medias",
+  "info": {
+    "displayName": "Social Media"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "enumeration",
+      "enum": [
+        "Facebook",
+        "Instagram",
+        "Threads",
+        "Website",
+        "Whatsapp",
+        "Youtube",
+        "LinkedIn",
+        "Telegram",
+        "Snapchat",
+        "Reddit",
+        "X",
+        "Discord",
+        "Line",
+        "Signal",
+        "GitHub",
+        "Truth Social"
+      ]
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
