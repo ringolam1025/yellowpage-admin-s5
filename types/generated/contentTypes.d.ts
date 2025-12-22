@@ -881,22 +881,16 @@ export interface ApiInfluencerInfluencer extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    facebook: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     image: Schema.Attribute.Media<'images' | 'videos', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
-    instagram: Schema.Attribute.String &
+    latest_posting: Schema.Attribute.Component<'influencer.influencer', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }>;
     locale: Schema.Attribute.String;
@@ -939,18 +933,6 @@ export interface ApiInfluencerInfluencer extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    x: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    youtube: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
   };
 }
 

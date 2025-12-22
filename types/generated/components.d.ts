@@ -52,6 +52,38 @@ export interface EventCategory extends Struct.ComponentSchema {
   };
 }
 
+export interface InfluencerInfluencer extends Struct.ComponentSchema {
+  collectionName: 'components_influencer_influencers';
+  info: {
+    displayName: 'influencer';
+  };
+  attributes: {
+    desc: Schema.Attribute.RichText;
+    platform: Schema.Attribute.Enumeration<
+      [
+        'Facebook',
+        'Instagram',
+        'Threads',
+        'Website',
+        'Whatsapp',
+        'Youtube',
+        'LinkedIn',
+        'Telegram',
+        'Snapchat',
+        'Reddit',
+        'X',
+        'Discord',
+        'Line',
+        'Signal',
+        'GitHub',
+        'Truth Social',
+      ]
+    >;
+    thumbnail: Schema.Attribute.Media<'images', true>;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface ShopOpeningHours extends Struct.ComponentSchema {
   collectionName: 'components_shop_opening_hours';
   info: {
@@ -107,6 +139,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'common.social-media': CommonSocialMedia;
       'event.category': EventCategory;
+      'influencer.influencer': InfluencerInfluencer;
       'shop.opening-hours': ShopOpeningHours;
       'shop.rewards': ShopRewards;
       'shop.services': ShopServices;

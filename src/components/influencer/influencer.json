@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_influencer_influencers",
+  "info": {
+    "displayName": "influencer"
+  },
+  "options": {},
+  "attributes": {
+    "platform": {
+      "type": "enumeration",
+      "enum": [
+        "Facebook",
+        "Instagram",
+        "Threads",
+        "Website",
+        "Whatsapp",
+        "Youtube",
+        "LinkedIn",
+        "Telegram",
+        "Snapchat",
+        "Reddit",
+        "X",
+        "Discord",
+        "Line",
+        "Signal",
+        "GitHub",
+        "Truth Social"
+      ]
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "url": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

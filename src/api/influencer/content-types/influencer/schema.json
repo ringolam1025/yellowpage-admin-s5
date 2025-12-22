@@ -50,38 +50,6 @@
         "videos"
       ]
     },
-    "facebook": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "instagram": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "youtube": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "x": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
     "phone": {
       "type": "string",
       "pluginOptions": {
@@ -131,6 +99,16 @@
         }
       },
       "component": "common.social-media",
+      "repeatable": true
+    },
+    "latest_posting": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "influencer.influencer",
       "repeatable": true
     }
   }
