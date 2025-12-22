@@ -890,7 +890,7 @@ export interface ApiInfluencerInfluencer extends Struct.CollectionTypeSchema {
     latest_posting: Schema.Attribute.Component<'influencer.influencer', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     locale: Schema.Attribute.String;
