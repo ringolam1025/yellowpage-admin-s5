@@ -782,7 +782,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     locale: Schema.Attribute.String;
@@ -1030,7 +1030,7 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
     photo: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
@@ -1208,6 +1208,12 @@ export interface ApiSettingSetting extends Struct.SingleTypeSchema {
       'api::setting.setting'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    Stamperoo_Register_Link: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     Stamperoo_template_id: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

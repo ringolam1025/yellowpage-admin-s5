@@ -47,6 +47,14 @@
           "localized": false
         }
       }
+    },
+    "Stamperoo_Register_Link": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }
