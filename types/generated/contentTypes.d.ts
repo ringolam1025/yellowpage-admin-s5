@@ -467,6 +467,48 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAdAd extends Struct.CollectionTypeSchema {
+  collectionName: 'ads';
+  info: {
+    displayName: 'Ad';
+    pluralName: 'ads';
+    singularName: 'ad';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    end: Schema.Attribute.DateTime;
+    image: Schema.Attribute.Media<'images' | 'videos'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::ad.ad'> &
+      Schema.Attribute.Private;
+    path: Schema.Attribute.String;
+    position: Schema.Attribute.Enumeration<
+      [
+        'Discover 1A',
+        'Discover 1B',
+        'Discover 1C',
+        'News 2A',
+        'News Article 3A',
+        'News Article 3B',
+        'Events 4A',
+        'Shops 5A',
+        'Shop Category 6A',
+        'Shop Category 6B',
+      ]
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    start: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -1809,6 +1851,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::ad.ad': ApiAdAd;
       'api::category.category': ApiCategoryCategory;
       'api::customer.customer': ApiCustomerCustomer;
       'api::directory.directory': ApiDirectoryDirectory;

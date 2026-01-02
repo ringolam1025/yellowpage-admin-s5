@@ -116,6 +116,7 @@ export interface ShopRewards extends Struct.ComponentSchema {
   attributes: {
     desc: Schema.Attribute.String;
     end_date: Schema.Attribute.Date;
+    icon: Schema.Attribute.Media<'images', true>;
     reward: Schema.Attribute.String;
     start_date: Schema.Attribute.Date;
   };

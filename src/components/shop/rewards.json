@@ -16,6 +16,13 @@
     },
     "end_date": {
       "type": "date"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   },
   "config": {}

@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ads",
+  "info": {
+    "singularName": "ad",
+    "pluralName": "ads",
+    "displayName": "Ad"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "path": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "start": {
+      "type": "datetime"
+    },
+    "end": {
+      "type": "datetime"
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "Discover 1A",
+        "Discover 1B",
+        "Discover 1C",
+        "News 2A",
+        "News Article 3A",
+        "News Article 3B",
+        "Events 4A",
+        "Shops 5A",
+        "Shop Category 6A",
+        "Shop Category 6B"
+      ]
+    }
+  }
+}
