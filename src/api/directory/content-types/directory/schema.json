@@ -77,9 +77,9 @@
       },
       "required": false
     },
-    "category": {
+    "categories": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::category.category",
       "inversedBy": "directories"
     },
@@ -99,7 +99,7 @@
           "localized": false
         }
       },
-      "required": true
+      "required": false
     },
     "longitude": {
       "type": "float",
@@ -108,7 +108,7 @@
           "localized": false
         }
       },
-      "required": true
+      "required": false
     },
     "rating": {
       "type": "integer",

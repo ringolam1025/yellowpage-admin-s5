@@ -529,7 +529,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     directories: Schema.Attribute.Relation<
-      'oneToMany',
+      'manyToMany',
       'api::directory.directory'
     >;
     display: Schema.Attribute.Integer &
@@ -537,20 +537,20 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }> &
       Schema.Attribute.DefaultTo<10>;
     google_fields: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }>;
     image: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }>;
     locale: Schema.Attribute.String;
@@ -634,7 +634,10 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
+    categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::category.category'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -645,7 +648,6 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
         };
       }>;
     latitude: Schema.Attribute.Float &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -663,7 +665,6 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
         };
       }>;
     longitude: Schema.Attribute.Float &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;

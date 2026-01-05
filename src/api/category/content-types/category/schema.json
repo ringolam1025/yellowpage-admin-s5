@@ -28,7 +28,7 @@
       "type": "media",
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "multiple": false,
@@ -38,15 +38,15 @@
     },
     "directories": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::directory.directory",
-      "mappedBy": "category"
+      "mappedBy": "categories"
     },
     "google_fields": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       }
     },
@@ -54,7 +54,7 @@
       "type": "integer",
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "required": true,
