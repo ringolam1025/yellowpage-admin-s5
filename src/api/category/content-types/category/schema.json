@@ -42,6 +42,14 @@
       "target": "api::directory.directory",
       "mappedBy": "category"
     },
+    "google_fields": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
     "display": {
       "type": "integer",
       "pluginOptions": {
