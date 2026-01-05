@@ -1025,6 +1025,10 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    newspaper: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::newspaper.newspaper'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1048,12 +1052,6 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    Area: Schema.Attribute.Enumeration<['Hong Kong', 'Canada']> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     content: Schema.Attribute.RichText &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -1076,7 +1074,14 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::newspaper.newspaper'
     >;
+    locations: Schema.Attribute.Relation<'oneToMany', 'api::location.location'>;
     photo: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    publish_date: Schema.Attribute.Date &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;

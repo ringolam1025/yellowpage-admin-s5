@@ -34,6 +34,12 @@
       },
       "required": true,
       "unique": true
+    },
+    "newspaper": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::newspaper.newspaper",
+      "inversedBy": "locations"
     }
   }
 }

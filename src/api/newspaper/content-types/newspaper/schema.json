@@ -61,17 +61,19 @@
       },
       "required": false
     },
-    "Area": {
-      "type": "enumeration",
+    "publish_date": {
+      "type": "date",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
-      },
-      "enum": [
-        "Hong Kong",
-        "Canada"
-      ]
+      }
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::location.location",
+      "mappedBy": "newspaper"
     }
   }
 }
