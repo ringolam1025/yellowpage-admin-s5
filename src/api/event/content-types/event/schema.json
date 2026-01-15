@@ -105,44 +105,40 @@
       }
     },
     "post_start": {
-      "type": "datetime",
+      "type": "date",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "required": true,
-      "default": "2025-09-30T06:00:01.839Z"
+      "required": true
     },
     "post_end": {
-      "type": "datetime",
+      "type": "date",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "required": true,
-      "default": "2025-09-30T06:00:21.507Z"
+      "required": true
     },
     "enroll_start": {
-      "type": "datetime",
+      "type": "date",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "required": true,
-      "default": "2025-09-30T06:00:49.168Z"
+      "required": true
     },
     "enroll_end": {
-      "type": "datetime",
+      "type": "date",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "required": true,
-      "default": "2025-09-30T06:00:01.832Z"
+      "required": true
     },
     "website": {
       "type": "string",

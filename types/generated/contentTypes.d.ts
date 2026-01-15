@@ -801,22 +801,20 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.DefaultTo<'17:00:00.000'>;
-    enroll_end: Schema.Attribute.DateTime &
+    enroll_end: Schema.Attribute.Date &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
-      }> &
-      Schema.Attribute.DefaultTo<'2025-09-30T06:00:01.832Z'>;
-    enroll_start: Schema.Attribute.DateTime &
+      }>;
+    enroll_start: Schema.Attribute.Date &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
-      }> &
-      Schema.Attribute.DefaultTo<'2025-09-30T06:00:49.168Z'>;
+      }>;
     event_date: Schema.Attribute.Date &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -861,22 +859,20 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    post_end: Schema.Attribute.DateTime &
+    post_end: Schema.Attribute.Date &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
-      }> &
-      Schema.Attribute.DefaultTo<'2025-09-30T06:00:21.507Z'>;
-    post_start: Schema.Attribute.DateTime &
+      }>;
+    post_start: Schema.Attribute.Date &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
-      }> &
-      Schema.Attribute.DefaultTo<'2025-09-30T06:00:01.839Z'>;
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     start_time: Schema.Attribute.Time &
       Schema.Attribute.Required &
