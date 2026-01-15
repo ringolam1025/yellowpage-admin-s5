@@ -40,6 +40,14 @@
       "relation": "manyToOne",
       "target": "api::newspaper.newspaper",
       "inversedBy": "locations"
+    },
+    "show": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }

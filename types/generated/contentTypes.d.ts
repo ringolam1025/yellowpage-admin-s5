@@ -547,6 +547,12 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    icon_name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     image: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -628,10 +634,9 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
         };
       }>;
     address: Schema.Attribute.String &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     categories: Schema.Attribute.Relation<
@@ -1030,6 +1035,12 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
       'api::newspaper.newspaper'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    show: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
