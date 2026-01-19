@@ -961,6 +961,7 @@ export interface ApiInfluencerInfluencer extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::influencer.influencer'
     >;
+    location: Schema.Attribute.Relation<'oneToOne', 'api::location.location'>;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -1020,6 +1021,10 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    influencer: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::influencer.influencer'
+    >;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

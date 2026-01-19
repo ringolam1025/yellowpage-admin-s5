@@ -48,6 +48,12 @@
           "localized": false
         }
       }
+    },
+    "influencer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::influencer.influencer",
+      "mappedBy": "location"
     }
   }
 }

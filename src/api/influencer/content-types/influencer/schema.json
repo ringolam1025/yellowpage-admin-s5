@@ -78,6 +78,12 @@
         }
       }
     },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location",
+      "inversedBy": "influencer"
+    },
     "social_media": {
       "type": "component",
       "pluginOptions": {
