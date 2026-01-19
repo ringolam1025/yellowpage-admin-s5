@@ -43,6 +43,33 @@
       },
       "required": true
     },
+    "event_end_date": {
+      "type": "date",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "long_event"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "long_event": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "default": false
+    },
     "start_time": {
       "type": "time",
       "pluginOptions": {
