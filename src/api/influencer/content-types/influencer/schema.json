@@ -80,9 +80,9 @@
     },
     "location": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::location.location",
-      "inversedBy": "influencer"
+      "inversedBy": "influencers"
     },
     "social_media": {
       "type": "component",

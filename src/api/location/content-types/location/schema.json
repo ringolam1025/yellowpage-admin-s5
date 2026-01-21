@@ -49,9 +49,9 @@
         }
       }
     },
-    "influencer": {
+    "influencers": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::influencer.influencer",
       "mappedBy": "location"
     }
