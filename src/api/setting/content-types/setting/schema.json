@@ -15,6 +15,16 @@
     }
   },
   "attributes": {
+    "poster": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "common.banner",
+      "repeatable": true
+    },
     "banner": {
       "type": "media",
       "pluginOptions": {

@@ -183,6 +183,12 @@
         }
       },
       "required": true
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::location.location",
+      "inversedBy": "events"
     }
   }
 }

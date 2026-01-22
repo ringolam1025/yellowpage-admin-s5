@@ -68,12 +68,6 @@
           "localized": false
         }
       }
-    },
-    "locations": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::location.location",
-      "mappedBy": "newspaper"
     }
   }
 }

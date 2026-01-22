@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface CommonBanner extends Struct.ComponentSchema {
+  collectionName: 'components_common_banners';
+  info: {
+    displayName: 'Banner';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'videos'>;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface CommonSocialMedia extends Struct.ComponentSchema {
   collectionName: 'components_common_social_medias';
   info: {
@@ -138,6 +149,7 @@ export interface ShopServices extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'common.banner': CommonBanner;
       'common.social-media': CommonSocialMedia;
       'event.category': EventCategory;
       'influencer.influencer': InfluencerInfluencer;

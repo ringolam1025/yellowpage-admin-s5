@@ -35,12 +35,6 @@
       "required": true,
       "unique": true
     },
-    "newspaper": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::newspaper.newspaper",
-      "inversedBy": "locations"
-    },
     "show": {
       "type": "boolean",
       "pluginOptions": {
@@ -54,6 +48,12 @@
       "relation": "oneToMany",
       "target": "api::influencer.influencer",
       "mappedBy": "location"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::event.event",
+      "mappedBy": "locations"
     }
   }
 }

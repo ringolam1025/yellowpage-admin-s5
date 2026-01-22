@@ -852,6 +852,10 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    locations: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::location.location'
+    >;
     long_event: Schema.Attribute.Boolean &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1021,6 +1025,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    events: Schema.Attribute.Relation<'manyToMany', 'api::event.event'>;
     influencers: Schema.Attribute.Relation<
       'oneToMany',
       'api::influencer.influencer'
@@ -1038,10 +1043,6 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    newspaper: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::newspaper.newspaper'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     show: Schema.Attribute.Boolean &
       Schema.Attribute.SetPluginOptions<{
@@ -1093,7 +1094,6 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::newspaper.newspaper'
     >;
-    locations: Schema.Attribute.Relation<'oneToMany', 'api::location.location'>;
     photo: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1280,6 +1280,12 @@ export interface ApiSettingSetting extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::setting.setting'
     >;
+    poster: Schema.Attribute.Component<'common.banner', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     Stamperoo_Register_Link: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
