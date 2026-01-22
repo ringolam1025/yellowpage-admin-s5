@@ -24,59 +24,6 @@
       },
       "required": true
     },
-    "premium_type": {
-      "type": "enumeration",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "default": "free",
-      "enum": [
-        "free",
-        "tier_1",
-        "tier_2"
-      ]
-    },
-    "premium_start_date": {
-      "type": "datetime",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "conditions": {
-        "visible": {
-          "!=": [
-            {
-              "var": "premium_type"
-            },
-            "free"
-          ]
-        }
-      },
-      "required": false,
-      "unique": false
-    },
-    "premium_end_date": {
-      "type": "datetime",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "conditions": {
-        "visible": {
-          "!=": [
-            {
-              "var": "premium_type"
-            },
-            "free"
-          ]
-        }
-      },
-      "required": false
-    },
     "categories": {
       "type": "relation",
       "relation": "manyToMany",
@@ -110,19 +57,6 @@
       },
       "required": false
     },
-    "rating": {
-      "type": "integer",
-      "private": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": false,
-      "default": 5,
-      "min": 0,
-      "max": 5
-    },
     "images": {
       "type": "media",
       "pluginOptions": {
@@ -137,41 +71,6 @@
         "videos"
       ]
     },
-    "phone": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true
-    },
-    "phone2": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "about": {
-      "type": "richtext",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": false
-    },
-    "review": {
-      "type": "json",
-      "private": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
     "logo": {
       "type": "media",
       "pluginOptions": {
@@ -183,6 +82,24 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "phone": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": false
+    },
+    "about": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": false
     },
     "opening_hours": {
       "type": "component",
@@ -214,6 +131,29 @@
       },
       "component": "shop.rewards",
       "repeatable": true
+    },
+    "tags": {
+      "type": "customField",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "customField": "plugin::tagsinput.tags",
+      "options": {
+        "apiUrl": ""
+      }
+    },
+    "Others": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "components": [
+        "shop.premium"
+      ]
     }
   }
 }

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shop_premiums",
+  "info": {
+    "displayName": "Premium"
+  },
+  "options": {},
+  "attributes": {
+    "premium_type": {
+      "type": "enumeration",
+      "default": "free",
+      "enum": [
+        "free",
+        "tier_1",
+        "tier_2"
+      ]
+    },
+    "premium_start_date": {
+      "type": "date"
+    },
+    "premium_end_date": {
+      "type": "date"
+    }
+  },
+  "config": {}
+}

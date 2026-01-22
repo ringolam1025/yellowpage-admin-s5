@@ -688,61 +688,19 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    Others: Schema.Attribute.DynamicZone<['shop.premium']> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     phone: Schema.Attribute.String &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
-    phone2: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    premium_end_date: Schema.Attribute.DateTime &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    premium_start_date: Schema.Attribute.DateTime &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    premium_type: Schema.Attribute.Enumeration<['free', 'tier_1', 'tier_2']> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<'free'>;
     publishedAt: Schema.Attribute.DateTime;
-    rating: Schema.Attribute.Integer &
-      Schema.Attribute.Private &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 5;
-          min: 0;
-        },
-        number
-      > &
-      Schema.Attribute.DefaultTo<5>;
-    review: Schema.Attribute.JSON &
-      Schema.Attribute.Private &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     rewards: Schema.Attribute.Component<'shop.rewards', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -750,6 +708,18 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
         };
       }>;
     social_media: Schema.Attribute.Component<'common.social-media', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    tags: Schema.Attribute.JSON &
+      Schema.Attribute.CustomField<
+        'plugin::tagsinput.tags',
+        {
+          apiUrl: '';
+        }
+      > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;

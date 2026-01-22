@@ -119,6 +119,19 @@ export interface ShopOpeningHours extends Struct.ComponentSchema {
   };
 }
 
+export interface ShopPremium extends Struct.ComponentSchema {
+  collectionName: 'components_shop_premiums';
+  info: {
+    displayName: 'Premium';
+  };
+  attributes: {
+    premium_end_date: Schema.Attribute.Date;
+    premium_start_date: Schema.Attribute.Date;
+    premium_type: Schema.Attribute.Enumeration<['free', 'tier_1', 'tier_2']> &
+      Schema.Attribute.DefaultTo<'free'>;
+  };
+}
+
 export interface ShopRewards extends Struct.ComponentSchema {
   collectionName: 'components_shop_rewards';
   info: {
@@ -154,6 +167,7 @@ declare module '@strapi/strapi' {
       'event.category': EventCategory;
       'influencer.influencer': InfluencerInfluencer;
       'shop.opening-hours': ShopOpeningHours;
+      'shop.premium': ShopPremium;
       'shop.rewards': ShopRewards;
       'shop.services': ShopServices;
     }
