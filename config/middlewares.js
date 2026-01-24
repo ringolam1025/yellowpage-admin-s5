@@ -1,4 +1,4 @@
-module.exports = [
+module.exports = ({ env }) => [
   "strapi::logger",
   "strapi::errors",
   {
@@ -12,17 +12,15 @@ module.exports = [
             "'self'",
             "data:",
             "blob:",
-            "market-assets.strapi.io",
-            "*.r2.cloudflarestorage.com",
-            "pub-b3474e86155541d6a8738cc56aba55eb.r2.dev",
+            "dl.airtable.com",
+            "*.cloudflarecounts.com",
+            env("R2_PUBLIC_URL").replace(/^https?:\/\//, ""),
           ],
           "media-src": [
             "'self'",
             "data:",
             "blob:",
-            "market-assets.strapi.io",
-            "*.r2.cloudflarestorage.com",
-            "pub-b3474e86155541d6a8738cc56aba55eb.r2.dev",
+            env("R2_PUBLIC_URL").replace(/^https?:\/\//, ""),
           ],
           upgradeInsecureRequests: null,
         },
