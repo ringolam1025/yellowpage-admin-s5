@@ -53,10 +53,10 @@ export interface EventCategory extends Struct.ComponentSchema {
         'Local Fun',
         'Arts & Shows',
         'Food & Markets',
-        'Health & Wellness,',
-        'Business & Education,',
-        'Sports & Outdoors,',
-        'Music & Nightlife,',
+        'Health & Wellness',
+        'Business & Education',
+        'Sports & Outdoors',
+        'Music & Nightlife',
         'Family & Kids',
       ]
     >;

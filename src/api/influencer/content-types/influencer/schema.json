@@ -51,7 +51,8 @@
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "required": false
     },
     "desc": {
       "type": "richtext",

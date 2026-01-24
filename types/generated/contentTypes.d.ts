@@ -614,7 +614,7 @@ export interface ApiCustomerCustomer extends Struct.CollectionTypeSchema {
 export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
   collectionName: 'directories';
   info: {
-    displayName: 'Directory';
+    displayName: 'Shop';
     pluralName: 'directories';
     singularName: 'directory';
   };
@@ -646,6 +646,12 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    email: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     images: Schema.Attribute.Media<'images' | 'videos', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -772,14 +778,12 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       }> &
       Schema.Attribute.DefaultTo<'17:00:00.000'>;
     enroll_end: Schema.Attribute.Date &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
     enroll_start: Schema.Attribute.Date &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -826,13 +830,6 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::location.location'
     >;
-    long_event: Schema.Attribute.Boolean &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<false>;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -847,14 +844,12 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
         };
       }>;
     post_end: Schema.Attribute.Date &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
     post_start: Schema.Attribute.Date &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -1029,7 +1024,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
 export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
   collectionName: 'newspapers';
   info: {
-    displayName: 'Newspaper';
+    displayName: 'News';
     pluralName: 'newspapers';
     singularName: 'newspaper';
   };
@@ -1329,17 +1324,27 @@ export interface ApiSocialMediaSocialMedia extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::social-media.social-media'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String & Schema.Attribute.Required;
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

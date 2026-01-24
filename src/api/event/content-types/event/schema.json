@@ -49,26 +49,7 @@
         "i18n": {
           "localized": false
         }
-      },
-      "conditions": {
-        "visible": {
-          "==": [
-            {
-              "var": "long_event"
-            },
-            true
-          ]
-        }
       }
-    },
-    "long_event": {
-      "type": "boolean",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "default": false
     },
     "start_time": {
       "type": "time",
@@ -138,7 +119,7 @@
           "localized": false
         }
       },
-      "required": true
+      "required": false
     },
     "post_end": {
       "type": "date",
@@ -147,7 +128,7 @@
           "localized": false
         }
       },
-      "required": true
+      "required": false
     },
     "enroll_start": {
       "type": "date",
@@ -156,7 +137,7 @@
           "localized": false
         }
       },
-      "required": true
+      "required": false
     },
     "enroll_end": {
       "type": "date",
@@ -165,7 +146,7 @@
           "localized": false
         }
       },
-      "required": true
+      "required": false
     },
     "website": {
       "type": "string",
