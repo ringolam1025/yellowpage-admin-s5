@@ -23,10 +23,10 @@
       ]
     },
     "start": {
-      "type": "datetime"
+      "type": "date"
     },
     "end": {
-      "type": "datetime"
+      "type": "date"
     },
     "position": {
       "type": "enumeration",

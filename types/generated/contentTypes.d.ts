@@ -481,7 +481,7 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    end: Schema.Attribute.DateTime;
+    end: Schema.Attribute.Date;
     image: Schema.Attribute.Media<'images' | 'videos'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::ad.ad'> &
@@ -502,7 +502,7 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
       ]
     >;
     publishedAt: Schema.Attribute.DateTime;
-    start: Schema.Attribute.DateTime;
+    start: Schema.Attribute.Date;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1059,7 +1059,7 @@ export interface ApiNewspaperNewspaper extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    publish_date: Schema.Attribute.Date &
+    publish_date: Schema.Attribute.DateTime &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;

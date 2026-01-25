@@ -62,7 +62,7 @@
       "required": false
     },
     "publish_date": {
-      "type": "date",
+      "type": "datetime",
       "pluginOptions": {
         "i18n": {
           "localized": false
