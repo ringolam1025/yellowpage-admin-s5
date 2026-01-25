@@ -1,3 +1,5 @@
+const r2Host = (env("R2_PUBLIC_URL") || "").replace(/^https?:\/\//, "");
+
 module.exports = ({ env }) => [
   "strapi::logger",
   "strapi::errors",
@@ -14,14 +16,9 @@ module.exports = ({ env }) => [
             "blob:",
             "dl.airtable.com",
             "*.cloudflarecounts.com",
-            env("R2_PUBLIC_URL", "").replace(/^https?:\/\//, ""),
+            r2Host,
           ],
-          "media-src": [
-            "'self'",
-            "data:",
-            "blob:",
-            env("R2_PUBLIC_URL", "").replace(/^https?:\/\//, ""),
-          ],
+          "media-src": ["'self'", "data:", "blob:", r2Host],
           upgradeInsecureRequests: null,
         },
       },
