@@ -11,6 +11,9 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "caption": {
+      "type": "string"
+    },
     "path": {
       "type": "string"
     },
@@ -41,6 +44,13 @@
         "Shops 5A",
         "Shop Category 6A",
         "Shop Category 6B"
+      ]
+    },
+    "path_type": {
+      "type": "enumeration",
+      "enum": [
+        "External",
+        "Internal"
       ]
     }
   }

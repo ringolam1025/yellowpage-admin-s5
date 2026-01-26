@@ -478,6 +478,7 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    caption: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -487,6 +488,7 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::ad.ad'> &
       Schema.Attribute.Private;
     path: Schema.Attribute.String;
+    path_type: Schema.Attribute.Enumeration<['External', 'Internal']>;
     position: Schema.Attribute.Enumeration<
       [
         'Discover 1A',
