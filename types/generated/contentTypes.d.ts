@@ -639,6 +639,7 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::category.category'
     >;
+    cities: Schema.Attribute.Relation<'manyToMany', 'api::location.location'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -962,7 +963,7 @@ export interface ApiInfluencerInfluencer extends Struct.CollectionTypeSchema {
 export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
   collectionName: 'locations';
   info: {
-    displayName: 'Location';
+    displayName: 'City';
     pluralName: 'locations';
     singularName: 'location';
   };
@@ -1005,6 +1006,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    shops: Schema.Attribute.Relation<'manyToMany', 'api::directory.directory'>;
     show: Schema.Attribute.Boolean &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

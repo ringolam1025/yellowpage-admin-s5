@@ -140,6 +140,12 @@
       "component": "shop.rewards",
       "repeatable": true
     },
+    "cities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::location.location",
+      "inversedBy": "shops"
+    },
     "tags": {
       "type": "customField",
       "pluginOptions": {
