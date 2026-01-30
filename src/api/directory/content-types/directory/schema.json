@@ -166,8 +166,15 @@
         }
       },
       "components": [
-        "shop.premium"
+        "shop.premium",
+        "shop.ads"
       ]
+    },
+    "ads": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ad.ad",
+      "mappedBy": "shop"
     }
   }
 }

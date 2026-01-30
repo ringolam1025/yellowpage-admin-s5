@@ -1,15 +1,9 @@
 {
-  "kind": "collectionType",
-  "collectionName": "ads",
+  "collectionName": "components_shop_ads",
   "info": {
-    "singularName": "ad",
-    "pluralName": "ads",
-    "displayName": "Ad"
+    "displayName": "Ads"
   },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
+  "options": {},
   "attributes": {
     "caption": {
       "type": "string"
@@ -28,12 +22,6 @@
         "Shop Category 6A",
         "Shop Category 6B"
       ]
-    },
-    "shop": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::directory.directory",
-      "inversedBy": "ads"
     },
     "image": {
       "type": "media",
@@ -68,6 +56,22 @@
           ]
         }
       }
+    },
+    "shops": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::directory.directory",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "path_type"
+            },
+            "Internal"
+          ]
+        }
+      }
     }
-  }
+  },
+  "config": {}
 }

@@ -504,6 +504,7 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
       ]
     >;
     publishedAt: Schema.Attribute.DateTime;
+    shop: Schema.Attribute.Relation<'manyToOne', 'api::directory.directory'>;
     start: Schema.Attribute.Date;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -635,6 +636,7 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    ads: Schema.Attribute.Relation<'oneToMany', 'api::ad.ad'>;
     categories: Schema.Attribute.Relation<
       'manyToMany',
       'api::category.category'
@@ -691,7 +693,7 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    Others: Schema.Attribute.DynamicZone<['shop.premium']> &
+    Others: Schema.Attribute.DynamicZone<['shop.premium', 'shop.ads']> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -1312,44 +1314,6 @@ export interface ApiShopTierShopTier extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiSocialMediaSocialMedia extends Struct.CollectionTypeSchema {
-  collectionName: 'social_medias';
-  info: {
-    displayName: 'SocialMedia';
-    pluralName: 'social-medias';
-    singularName: 'social-media';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::social-media.social-media'
-    >;
-    name: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1873,7 +1837,6 @@ declare module '@strapi/strapi' {
       'api::publisher.publisher': ApiPublisherPublisher;
       'api::setting.setting': ApiSettingSetting;
       'api::shop-tier.shop-tier': ApiShopTierShopTier;
-      'api::social-media.social-media': ApiSocialMediaSocialMedia;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

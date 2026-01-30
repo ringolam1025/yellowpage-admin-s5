@@ -96,6 +96,36 @@ export interface InfluencerInfluencer extends Struct.ComponentSchema {
   };
 }
 
+export interface ShopAds extends Struct.ComponentSchema {
+  collectionName: 'components_shop_ads';
+  info: {
+    displayName: 'Ads';
+  };
+  attributes: {
+    caption: Schema.Attribute.String;
+    end: Schema.Attribute.Date;
+    image: Schema.Attribute.Media<'images' | 'videos'>;
+    path: Schema.Attribute.String;
+    path_type: Schema.Attribute.Enumeration<['External', 'Internal']>;
+    position: Schema.Attribute.Enumeration<
+      [
+        'Discover 1A',
+        'Discover 1B',
+        'Discover 1C',
+        'News 2A',
+        'News Article 3A',
+        'News Article 3B',
+        'Events 4A',
+        'Shops 5A',
+        'Shop Category 6A',
+        'Shop Category 6B',
+      ]
+    >;
+    shops: Schema.Attribute.Relation<'oneToMany', 'api::directory.directory'>;
+    start: Schema.Attribute.Date;
+  };
+}
+
 export interface ShopOpeningHours extends Struct.ComponentSchema {
   collectionName: 'components_shop_opening_hours';
   info: {
@@ -167,6 +197,7 @@ declare module '@strapi/strapi' {
       'common.social-media': CommonSocialMedia;
       'event.category': EventCategory;
       'influencer.influencer': InfluencerInfluencer;
+      'shop.ads': ShopAds;
       'shop.opening-hours': ShopOpeningHours;
       'shop.premium': ShopPremium;
       'shop.rewards': ShopRewards;
