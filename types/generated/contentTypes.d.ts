@@ -504,7 +504,6 @@ export interface ApiAdAd extends Struct.CollectionTypeSchema {
       ]
     >;
     publishedAt: Schema.Attribute.DateTime;
-    shop: Schema.Attribute.Relation<'manyToOne', 'api::directory.directory'>;
     start: Schema.Attribute.Date;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -636,7 +635,6 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    ads: Schema.Attribute.Relation<'oneToMany', 'api::ad.ad'>;
     categories: Schema.Attribute.Relation<
       'manyToMany',
       'api::category.category'

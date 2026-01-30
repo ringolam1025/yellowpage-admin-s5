@@ -22,6 +22,9 @@
         "External",
         "Internal"
       ]
+    },
+    "path": {
+      "type": "string"
     }
   },
   "config": {}
