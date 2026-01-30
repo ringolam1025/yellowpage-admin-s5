@@ -9,39 +9,20 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": true
-    }
-  },
+  "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
       "required": true,
       "unique": true
     },
     "display": {
       "type": "integer",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
       "required": true,
       "unique": true
     },
     "show": {
-      "type": "boolean",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
+      "type": "boolean"
     },
     "influencers": {
       "type": "relation",
