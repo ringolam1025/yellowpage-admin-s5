@@ -25,19 +25,6 @@
       "component": "common.banner",
       "repeatable": true
     },
-    "banner": {
-      "type": "media",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "videos"
-      ]
-    },
     "applogo": {
       "type": "media",
       "pluginOptions": {

@@ -13,9 +13,6 @@
         "videos"
       ]
     },
-    "url": {
-      "type": "string"
-    },
     "path_type": {
       "type": "enumeration",
       "enum": [

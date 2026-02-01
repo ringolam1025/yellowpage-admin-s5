@@ -9,7 +9,6 @@ export interface CommonBanner extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images' | 'videos'>;
     path: Schema.Attribute.String;
     path_type: Schema.Attribute.Enumeration<['External', 'Internal']>;
-    url: Schema.Attribute.String;
   };
 }
 
