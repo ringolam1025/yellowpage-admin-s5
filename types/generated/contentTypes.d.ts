@@ -927,7 +927,10 @@ export interface ApiInfluencerInfluencer extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::influencer.influencer'
     >;
-    location: Schema.Attribute.Relation<'manyToOne', 'api::location.location'>;
+    locations: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::location.location'
+    >;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -979,7 +982,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
       Schema.Attribute.Unique;
     events: Schema.Attribute.Relation<'manyToMany', 'api::event.event'>;
     influencers: Schema.Attribute.Relation<
-      'oneToMany',
+      'manyToMany',
       'api::influencer.influencer'
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

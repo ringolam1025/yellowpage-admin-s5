@@ -26,9 +26,9 @@
     },
     "influencers": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::influencer.influencer",
-      "mappedBy": "location"
+      "mappedBy": "locations"
     },
     "events": {
       "type": "relation",
